@@ -1,0 +1,8 @@
+- insert:
+    - id: ptc-tool-search
+      name: '@hrygo/dsh-ptc-tool-search'
+      config:
+        enabled: true
+        maxResults: 3
+        maxQueryChars: 256
+        maxDescriptionChars: 160

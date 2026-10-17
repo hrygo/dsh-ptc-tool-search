@@ -1,0 +1,7 @@
+node_modules/
+*.tgz
+evidence/
+PLAN.md
+.env
+.env.*
+*.log
