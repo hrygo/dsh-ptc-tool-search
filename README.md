@@ -2,7 +2,22 @@
 
 English | [中文](README.zh.md)
 
-An independent DeepSeek Harness Host bundle that loads PTC tool SDK definitions on demand through the official scoped registry. Version 0.1.0 supports **Harness 0.2.1-rc.2** and Node.js 24+. It does not implement a provider's native search protocol.
+Load PTC tool definitions only when needed. In a real two-model A/B test, this plugin reduced **first-request input by about 81%** and **cumulative input across two turns by 52–64%**, including search and retry overhead.
+
+An independent community Host bundle for DeepSeek Harness, using its official scoped tool registry. Version 0.1.0 supports **Harness 0.2.1-rc.2** and Node.js 24+.
+
+## Measured results
+
+Tested on 2026-10-18 with GPT 6.1 Sol and Muse Spark 1.3 through CLIProxyAPI Responses on macOS ARM64. A used the full PTC SDK; B enabled this plugin. Both groups received identical prompts: execute `printf 137`, calculate from the actual output, then recall the result in a second turn without tools. All four sessions answered correctly.
+
+| Model | First request input A → B | Reduction | Two-turn cumulative input A → B | Reduction |
+| --- | ---: | ---: | ---: | ---: |
+| GPT 6.1 Sol | 21,102 → 3,957 | **81.25%** | 63,669 → 23,143 | **63.65%** |
+| Muse Spark 1.3 | 21,046 → 4,057 | **80.72%** | 64,487 → 30,689 | **52.41%** |
+
+Counts are provider-reported input tokens, including cache reads and writes. The initial generated SDK exposed **2 tool definitions instead of 35** (`tool_search` and agent-owned `subagent`); selected definitions appeared on subsequent requests. The plugin defers tool definitions while preserving conversation history. Both groups still exposed only `run_code` as the API-level tool; this is not a provider-native search protocol.
+
+**Tradeoff:** the first task took 4 model requests with discovery versus 2 with the full SDK. Search and retries remain included above; SDK input grows as more tools are selected. Each model has one A/B pair, so these results describe this task, not average savings or a billing or latency guarantee. See [measurement details and limitations](docs/validation.md).
 
 ## Install
 
@@ -53,7 +68,7 @@ npm run check
 npm pack --dry-run
 ```
 
-Nine tests cover ranking, bounds, scope isolation, policy intersection, unload and recreation. Local macOS ARM64 acceptance on 2026-10-18 verified GPT 6.1 Sol and Muse Spark 1.3 over CLIProxyAPI Responses, including terminal calls, follow-up memory and image generation. The same two-turn task reduced cumulative input by 63.65% and 52.41%, counting searches and retries. These are individual samples, not general cost or latency guarantees; see [method and limitations](docs/validation.md).
+Nine tests cover ranking, bounds, scope isolation, policy intersection, unload and recreation. Local macOS ARM64 acceptance on 2026-10-18 verified GPT 6.1 Sol and Muse Spark 1.3 over CLIProxyAPI Responses, including terminal calls, follow-up memory and image generation. See [acceptance details](docs/validation.md), including image attachment and file checks.
 
 No runtime dependencies, credential handling, install scripts, prompt rewriting or custom persistent session events are added. Harness owns SDK generation, guarded tool dispatch, approvals and logging.
 
