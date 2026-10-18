@@ -2,11 +2,15 @@
 
 Verified on 2026-10-18 with DeepSeek Harness Desktop and CLI 0.2.1-rc.2 on macOS ARM64. Runtime code was exercised before publication as a local bundle; the public package renames that bundle without changing discovery behavior.
 
+## Repeated four-turn benchmark
+
+The expanded benchmark uses 12 independent sessions (two models × two modes × three repetitions), with multiple business tools, tool-free recall, image generation and file readback. See the [per-run report and methodology](benchmark-2026-10-18.md) and [sanitized counters and prompts](benchmark-2026-10-18.json). It reports input and output tokens, active latency, success and missing actual-charge data; the earlier pilot below is retained separately and is not pooled with these runs.
+
 ## Unit and distribution checks
 
 Nine tests cover exact-name ranking, capability terms, no-match queries, bounds, progressive visibility, independent agents, policy intersection, ownership checks, unload and recreation. The release tarball is tested after extraction, with manifest exports, locales, SVG and file allowlisting checked. No runtime dependencies or install/build scripts are required.
 
-## Identical-task comparison
+## Earlier two-turn pilot
 
 A used the full PTC SDK. B used progressive discovery with the same profile, workspace, business plugins, models and prompts. The first turn ran `printf 137`, read its real output and calculated `n * 3 + 9`. A second turn recalled `AB-137` and added one without tools. All four sessions returned the expected `AB-137 / 137 / 420` and `AB-137 / 421`.
 

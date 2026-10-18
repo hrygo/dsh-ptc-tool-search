@@ -1,0 +1,1777 @@
+{
+  "measuredAt": "2026-10-18 Asia/Shanghai",
+  "runtime": "DeepSeek Harness Desktop 0.2.1-rc.2 macOS ARM64",
+  "pluginRuntimeVersion": "0.1.0",
+  "transport": "CLIProxyAPI Responses",
+  "promptSha256": [
+    "a7caa6bac41c05c48bdd361a69df3b94b0be148314d931ba4c3e57fbe4ee422b",
+    "6cdd1a23843fd70169a82577592038ce6a8954b063cda2b452e5c5cc4995764a",
+    "6c38417523916e41f97e2cf586a7f566b92bee2f850b9e530c8d0c295b1b3003",
+    "cf5af31b3fde3e7452ff1a3a020ace061af084882894c6ab38796824861aba4c"
+  ],
+  "actualChargeStatus": "not_reported; not zero; no billing estimate",
+  "imageTokenStatus": "not_reported; conversation tokens exclude image-model generation tokens",
+  "latencyDefinition": "sum of four turn/start to turn/end durations; includes tool/image generation, excludes gaps between user prompts",
+  "runs": [
+    {
+      "model": "gpt-6.1-sol",
+      "group": "B",
+      "repeat": 1,
+      "success": true,
+      "conversationInputTokens": 82826,
+      "conversationOutputTokens": 1278,
+      "uncachedInputTokens": 35082,
+      "cacheReadTokens": 47744,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 4077,
+      "peakInputTokens": 8403,
+      "modelRequests": 13,
+      "turnLatencyMs": [
+        29741,
+        2542,
+        27353,
+        7213
+      ],
+      "activeLatencyMs": 66849,
+      "imageToolLatencyMs": 14547,
+      "initialSdkDefinitions": 2,
+      "toolErrors": 0,
+      "toolErrorCategories": {},
+      "businessCalls": 5,
+      "searchCalls": 4,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1254,
+          "height": 1254,
+          "exactSizeMatch": false,
+          "squareAspect": true,
+          "bytes": 1110110,
+          "sha256": "b7e2a0dd5d8cd3dd7e09248155c7a46a381d5ad863dd5aa29e366d0973580298"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 4077,
+          "uncachedInput": 4077,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 78
+        },
+        {
+          "turn": 1,
+          "input": 4487,
+          "uncachedInput": 4487,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 83
+        },
+        {
+          "turn": 1,
+          "input": 4668,
+          "uncachedInput": 4668,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 150
+        },
+        {
+          "turn": 1,
+          "input": 5628,
+          "uncachedInput": 5628,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 189
+        },
+        {
+          "turn": 1,
+          "input": 5855,
+          "uncachedInput": 351,
+          "cacheRead": 5504,
+          "cacheWrite": 0,
+          "output": 76
+        },
+        {
+          "turn": 1,
+          "input": 6246,
+          "uncachedInput": 6246,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 132
+        },
+        {
+          "turn": 1,
+          "input": 6460,
+          "uncachedInput": 316,
+          "cacheRead": 6144,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 2,
+          "input": 6525,
+          "uncachedInput": 253,
+          "cacheRead": 6272,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 3,
+          "input": 6683,
+          "uncachedInput": 283,
+          "cacheRead": 6400,
+          "cacheWrite": 0,
+          "output": 80
+        },
+        {
+          "turn": 3,
+          "input": 7540,
+          "uncachedInput": 7540,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 176
+        },
+        {
+          "turn": 3,
+          "input": 8044,
+          "uncachedInput": 620,
+          "cacheRead": 7424,
+          "cacheWrite": 0,
+          "output": 93
+        },
+        {
+          "turn": 4,
+          "input": 8210,
+          "uncachedInput": 274,
+          "cacheRead": 7936,
+          "cacheWrite": 0,
+          "output": 167
+        },
+        {
+          "turn": 4,
+          "input": 8403,
+          "uncachedInput": 339,
+          "cacheRead": 8064,
+          "cacheWrite": 0,
+          "output": 18
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "group": "A",
+      "repeat": 1,
+      "success": true,
+      "conversationInputTokens": 153668,
+      "conversationOutputTokens": 782,
+      "uncachedInputTokens": 23492,
+      "cacheReadTokens": 130176,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 21222,
+      "peakInputTokens": 22657,
+      "modelRequests": 7,
+      "turnLatencyMs": [
+        10397,
+        2842,
+        27414,
+        8805
+      ],
+      "activeLatencyMs": 49458,
+      "imageToolLatencyMs": 14996,
+      "initialSdkDefinitions": 35,
+      "toolErrors": 0,
+      "toolErrorCategories": {},
+      "businessCalls": 5,
+      "searchCalls": 0,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1254,
+          "height": 1254,
+          "exactSizeMatch": false,
+          "squareAspect": true,
+          "bytes": 1034695,
+          "sha256": "7dd4a00935c018522ed07e1f2b215a7a72c9e6b729f1192cc279caad27044ddf"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 21222,
+          "uncachedInput": 21222,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 318
+        },
+        {
+          "turn": 1,
+          "input": 21586,
+          "uncachedInput": 466,
+          "cacheRead": 21120,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 2,
+          "input": 21651,
+          "uncachedInput": 147,
+          "cacheRead": 21504,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 3,
+          "input": 21809,
+          "uncachedInput": 305,
+          "cacheRead": 21504,
+          "cacheWrite": 0,
+          "output": 168
+        },
+        {
+          "turn": 3,
+          "input": 22302,
+          "uncachedInput": 670,
+          "cacheRead": 21632,
+          "cacheWrite": 0,
+          "output": 66
+        },
+        {
+          "turn": 4,
+          "input": 22441,
+          "uncachedInput": 297,
+          "cacheRead": 22144,
+          "cacheWrite": 0,
+          "output": 176
+        },
+        {
+          "turn": 4,
+          "input": 22657,
+          "uncachedInput": 385,
+          "cacheRead": 22272,
+          "cacheWrite": 0,
+          "output": 18
+        }
+      ]
+    },
+    {
+      "model": "opencode-go-muse-spark-1.3",
+      "group": "A",
+      "repeat": 1,
+      "success": true,
+      "conversationInputTokens": 197772,
+      "conversationOutputTokens": 4748,
+      "uncachedInputTokens": 27396,
+      "cacheReadTokens": 170376,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 21165,
+      "peakInputTokens": 27119,
+      "modelRequests": 8,
+      "turnLatencyMs": [
+        16500,
+        2298,
+        22690,
+        3728
+      ],
+      "activeLatencyMs": 45216,
+      "imageToolLatencyMs": 13380,
+      "initialSdkDefinitions": 35,
+      "toolErrors": 1,
+      "toolErrorCategories": {
+        "invalid_terminal_arguments": 1
+      },
+      "businessCalls": 5,
+      "searchCalls": 0,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1536,
+          "height": 1024,
+          "exactSizeMatch": false,
+          "squareAspect": false,
+          "bytes": 1104565,
+          "sha256": "17251ed91d355599e48da5113fd0084ccaf1e535e80d19dfc59c53f27a7c4219"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 21165,
+          "uncachedInput": 21052,
+          "cacheRead": 113,
+          "cacheWrite": 0,
+          "output": 1889
+        },
+        {
+          "turn": 1,
+          "input": 23091,
+          "uncachedInput": 1986,
+          "cacheRead": 21105,
+          "cacheWrite": 0,
+          "output": 866
+        },
+        {
+          "turn": 1,
+          "input": 24341,
+          "uncachedInput": 1316,
+          "cacheRead": 23025,
+          "cacheWrite": 0,
+          "output": 132
+        },
+        {
+          "turn": 2,
+          "input": 24520,
+          "uncachedInput": 215,
+          "cacheRead": 24305,
+          "cacheWrite": 0,
+          "output": 111
+        },
+        {
+          "turn": 3,
+          "input": 24760,
+          "uncachedInput": 327,
+          "cacheRead": 24433,
+          "cacheWrite": 0,
+          "output": 982
+        },
+        {
+          "turn": 3,
+          "input": 26153,
+          "uncachedInput": 1464,
+          "cacheRead": 24689,
+          "cacheWrite": 0,
+          "output": 400
+        },
+        {
+          "turn": 4,
+          "input": 26623,
+          "uncachedInput": 526,
+          "cacheRead": 26097,
+          "cacheWrite": 0,
+          "output": 311
+        },
+        {
+          "turn": 4,
+          "input": 27119,
+          "uncachedInput": 510,
+          "cacheRead": 26609,
+          "cacheWrite": 0,
+          "output": 57
+        }
+      ]
+    },
+    {
+      "model": "opencode-go-muse-spark-1.3",
+      "group": "B",
+      "repeat": 1,
+      "success": true,
+      "conversationInputTokens": 90087,
+      "conversationOutputTokens": 3268,
+      "uncachedInputTokens": 29339,
+      "cacheReadTokens": 60748,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 4176,
+      "peakInputTokens": 10709,
+      "modelRequests": 12,
+      "turnLatencyMs": [
+        13577,
+        1524,
+        20554,
+        4250
+      ],
+      "activeLatencyMs": 39905,
+      "imageToolLatencyMs": 13146,
+      "initialSdkDefinitions": 2,
+      "toolErrors": 1,
+      "toolErrorCategories": {
+        "invalid_terminal_arguments": 1
+      },
+      "businessCalls": 5,
+      "searchCalls": 4,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1536,
+          "height": 1024,
+          "exactSizeMatch": false,
+          "squareAspect": false,
+          "bytes": 1102862,
+          "sha256": "0783905d28e07ddec85ebca4958f11d57c485f22332b797c291657921e43795d"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 4176,
+          "uncachedInput": 4063,
+          "cacheRead": 113,
+          "cacheWrite": 0,
+          "output": 444
+        },
+        {
+          "turn": 1,
+          "input": 4657,
+          "uncachedInput": 576,
+          "cacheRead": 4081,
+          "cacheWrite": 0,
+          "output": 216
+        },
+        {
+          "turn": 1,
+          "input": 5215,
+          "uncachedInput": 4206,
+          "cacheRead": 1009,
+          "cacheWrite": 0,
+          "output": 212
+        },
+        {
+          "turn": 1,
+          "input": 6248,
+          "uncachedInput": 4855,
+          "cacheRead": 1393,
+          "cacheWrite": 0,
+          "output": 145
+        },
+        {
+          "turn": 1,
+          "input": 6719,
+          "uncachedInput": 5582,
+          "cacheRead": 1137,
+          "cacheWrite": 0,
+          "output": 631
+        },
+        {
+          "turn": 1,
+          "input": 7590,
+          "uncachedInput": 949,
+          "cacheRead": 6641,
+          "cacheWrite": 0,
+          "output": 107
+        },
+        {
+          "turn": 2,
+          "input": 7744,
+          "uncachedInput": 207,
+          "cacheRead": 7537,
+          "cacheWrite": 0,
+          "output": 72
+        },
+        {
+          "turn": 3,
+          "input": 7945,
+          "uncachedInput": 280,
+          "cacheRead": 7665,
+          "cacheWrite": 0,
+          "output": 232
+        },
+        {
+          "turn": 3,
+          "input": 8963,
+          "uncachedInput": 6802,
+          "cacheRead": 2161,
+          "cacheWrite": 0,
+          "output": 551
+        },
+        {
+          "turn": 3,
+          "input": 9893,
+          "uncachedInput": 948,
+          "cacheRead": 8945,
+          "cacheWrite": 0,
+          "output": 265
+        },
+        {
+          "turn": 4,
+          "input": 10228,
+          "uncachedInput": 387,
+          "cacheRead": 9841,
+          "cacheWrite": 0,
+          "output": 338
+        },
+        {
+          "turn": 4,
+          "input": 10709,
+          "uncachedInput": 484,
+          "cacheRead": 10225,
+          "cacheWrite": 0,
+          "output": 55
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "group": "A",
+      "repeat": 2,
+      "success": true,
+      "conversationInputTokens": 153703,
+      "conversationOutputTokens": 782,
+      "uncachedInputTokens": 23527,
+      "cacheReadTokens": 130176,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 21222,
+      "peakInputTokens": 22675,
+      "modelRequests": 7,
+      "turnLatencyMs": [
+        10468,
+        1867,
+        24507,
+        7503
+      ],
+      "activeLatencyMs": 44345,
+      "imageToolLatencyMs": 15512,
+      "initialSdkDefinitions": 35,
+      "toolErrors": 0,
+      "toolErrorCategories": {},
+      "businessCalls": 5,
+      "searchCalls": 0,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1254,
+          "height": 1254,
+          "exactSizeMatch": false,
+          "squareAspect": true,
+          "bytes": 1018050,
+          "sha256": "45b8c4f36e9e061d9ed204fb889fd8f8ac32fe6d8644a2f534b75e0f4c7e05a9"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 21222,
+          "uncachedInput": 21222,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 317
+        },
+        {
+          "turn": 1,
+          "input": 21585,
+          "uncachedInput": 465,
+          "cacheRead": 21120,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 2,
+          "input": 21650,
+          "uncachedInput": 146,
+          "cacheRead": 21504,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 3,
+          "input": 21808,
+          "uncachedInput": 304,
+          "cacheRead": 21504,
+          "cacheWrite": 0,
+          "output": 158
+        },
+        {
+          "turn": 3,
+          "input": 22309,
+          "uncachedInput": 677,
+          "cacheRead": 21632,
+          "cacheWrite": 0,
+          "output": 72
+        },
+        {
+          "turn": 4,
+          "input": 22454,
+          "uncachedInput": 310,
+          "cacheRead": 22144,
+          "cacheWrite": 0,
+          "output": 181
+        },
+        {
+          "turn": 4,
+          "input": 22675,
+          "uncachedInput": 403,
+          "cacheRead": 22272,
+          "cacheWrite": 0,
+          "output": 18
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "group": "B",
+      "repeat": 2,
+      "success": true,
+      "conversationInputTokens": 69958,
+      "conversationOutputTokens": 1140,
+      "uncachedInputTokens": 29382,
+      "cacheReadTokens": 40576,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 4077,
+      "peakInputTokens": 8185,
+      "modelRequests": 11,
+      "turnLatencyMs": [
+        22675,
+        2482,
+        27828,
+        9414
+      ],
+      "activeLatencyMs": 62399,
+      "imageToolLatencyMs": 15284,
+      "initialSdkDefinitions": 2,
+      "toolErrors": 0,
+      "toolErrorCategories": {},
+      "businessCalls": 5,
+      "searchCalls": 4,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1254,
+          "height": 1254,
+          "exactSizeMatch": false,
+          "squareAspect": true,
+          "bytes": 1095284,
+          "sha256": "d7cd74eac164121e82a9f31326ec0c0e10cf36e40f342be3d7bf8fffa36ef5c8"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 4077,
+          "uncachedInput": 4077,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 70
+        },
+        {
+          "turn": 1,
+          "input": 4479,
+          "uncachedInput": 4479,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 75
+        },
+        {
+          "turn": 1,
+          "input": 5364,
+          "uncachedInput": 5364,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 72
+        },
+        {
+          "turn": 1,
+          "input": 5751,
+          "uncachedInput": 5751,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 358
+        },
+        {
+          "turn": 1,
+          "input": 6238,
+          "uncachedInput": 606,
+          "cacheRead": 5632,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 2,
+          "input": 6303,
+          "uncachedInput": 159,
+          "cacheRead": 6144,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 3,
+          "input": 6461,
+          "uncachedInput": 317,
+          "cacheRead": 6144,
+          "cacheWrite": 0,
+          "output": 76
+        },
+        {
+          "turn": 3,
+          "input": 7314,
+          "uncachedInput": 7314,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 174
+        },
+        {
+          "turn": 3,
+          "input": 7812,
+          "uncachedInput": 644,
+          "cacheRead": 7168,
+          "cacheWrite": 0,
+          "output": 89
+        },
+        {
+          "turn": 4,
+          "input": 7974,
+          "uncachedInput": 294,
+          "cacheRead": 7680,
+          "cacheWrite": 0,
+          "output": 172
+        },
+        {
+          "turn": 4,
+          "input": 8185,
+          "uncachedInput": 377,
+          "cacheRead": 7808,
+          "cacheWrite": 0,
+          "output": 18
+        }
+      ]
+    },
+    {
+      "model": "opencode-go-muse-spark-1.3",
+      "group": "B",
+      "repeat": 2,
+      "success": true,
+      "conversationInputTokens": 100794,
+      "conversationOutputTokens": 4177,
+      "uncachedInputTokens": 32735,
+      "cacheReadTokens": 68059,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 4175,
+      "peakInputTokens": 12176,
+      "modelRequests": 12,
+      "turnLatencyMs": [
+        14408,
+        3901,
+        20567,
+        4958
+      ],
+      "activeLatencyMs": 43834,
+      "imageToolLatencyMs": 13012,
+      "initialSdkDefinitions": 2,
+      "toolErrors": 1,
+      "toolErrorCategories": {
+        "invalid_terminal_arguments": 1
+      },
+      "businessCalls": 5,
+      "searchCalls": 4,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1536,
+          "height": 1024,
+          "exactSizeMatch": false,
+          "squareAspect": false,
+          "bytes": 1119509,
+          "sha256": "4c3428c8cb1aec3ed2ab764a56b0119a38fce27a7d2251f15581154deb92ad61"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 4175,
+          "uncachedInput": 4175,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 648
+        },
+        {
+          "turn": 1,
+          "input": 4859,
+          "uncachedInput": 394,
+          "cacheRead": 4465,
+          "cacheWrite": 0,
+          "output": 233
+        },
+        {
+          "turn": 1,
+          "input": 5475,
+          "uncachedInput": 4594,
+          "cacheRead": 881,
+          "cacheWrite": 0,
+          "output": 479
+        },
+        {
+          "turn": 1,
+          "input": 6848,
+          "uncachedInput": 5455,
+          "cacheRead": 1393,
+          "cacheWrite": 0,
+          "output": 163
+        },
+        {
+          "turn": 1,
+          "input": 7379,
+          "uncachedInput": 6498,
+          "cacheRead": 881,
+          "cacheWrite": 0,
+          "output": 877
+        },
+        {
+          "turn": 1,
+          "input": 8729,
+          "uncachedInput": 680,
+          "cacheRead": 8049,
+          "cacheWrite": 0,
+          "output": 131
+        },
+        {
+          "turn": 2,
+          "input": 8906,
+          "uncachedInput": 345,
+          "cacheRead": 8561,
+          "cacheWrite": 0,
+          "output": 128
+        },
+        {
+          "turn": 3,
+          "input": 9162,
+          "uncachedInput": 601,
+          "cacheRead": 8561,
+          "cacheWrite": 0,
+          "output": 206
+        },
+        {
+          "turn": 3,
+          "input": 10225,
+          "uncachedInput": 8320,
+          "cacheRead": 1905,
+          "cacheWrite": 0,
+          "output": 501
+        },
+        {
+          "turn": 3,
+          "input": 11191,
+          "uncachedInput": 582,
+          "cacheRead": 10609,
+          "cacheWrite": 0,
+          "output": 409
+        },
+        {
+          "turn": 4,
+          "input": 11669,
+          "uncachedInput": 548,
+          "cacheRead": 11121,
+          "cacheWrite": 0,
+          "output": 352
+        },
+        {
+          "turn": 4,
+          "input": 12176,
+          "uncachedInput": 543,
+          "cacheRead": 11633,
+          "cacheWrite": 0,
+          "output": 50
+        }
+      ]
+    },
+    {
+      "model": "opencode-go-muse-spark-1.3",
+      "group": "A",
+      "repeat": 2,
+      "success": true,
+      "conversationInputTokens": 188566,
+      "conversationOutputTokens": 3164,
+      "uncachedInputTokens": 25742,
+      "cacheReadTokens": 162824,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 21165,
+      "peakInputTokens": 25408,
+      "modelRequests": 8,
+      "turnLatencyMs": [
+        16294,
+        3327,
+        20983,
+        6438
+      ],
+      "activeLatencyMs": 47042,
+      "imageToolLatencyMs": 12747,
+      "initialSdkDefinitions": 35,
+      "toolErrors": 1,
+      "toolErrorCategories": {
+        "invalid_terminal_arguments": 1
+      },
+      "businessCalls": 5,
+      "searchCalls": 0,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1536,
+          "height": 1024,
+          "exactSizeMatch": false,
+          "squareAspect": false,
+          "bytes": 1129159,
+          "sha256": "bae8dc464d664498acf380d9e849eb03f62cfab31a579740272f218ec96caca9"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 21165,
+          "uncachedInput": 21052,
+          "cacheRead": 113,
+          "cacheWrite": 0,
+          "output": 1089
+        },
+        {
+          "turn": 1,
+          "input": 22291,
+          "uncachedInput": 1186,
+          "cacheRead": 21105,
+          "cacheWrite": 0,
+          "output": 648
+        },
+        {
+          "turn": 1,
+          "input": 23230,
+          "uncachedInput": 973,
+          "cacheRead": 22257,
+          "cacheWrite": 0,
+          "output": 95
+        },
+        {
+          "turn": 2,
+          "input": 23372,
+          "uncachedInput": 219,
+          "cacheRead": 23153,
+          "cacheWrite": 0,
+          "output": 59
+        },
+        {
+          "turn": 3,
+          "input": 23560,
+          "uncachedInput": 279,
+          "cacheRead": 23281,
+          "cacheWrite": 0,
+          "output": 597
+        },
+        {
+          "turn": 3,
+          "input": 24599,
+          "uncachedInput": 1062,
+          "cacheRead": 23537,
+          "cacheWrite": 0,
+          "output": 272
+        },
+        {
+          "turn": 4,
+          "input": 24941,
+          "uncachedInput": 380,
+          "cacheRead": 24561,
+          "cacheWrite": 0,
+          "output": 367
+        },
+        {
+          "turn": 4,
+          "input": 25408,
+          "uncachedInput": 591,
+          "cacheRead": 24817,
+          "cacheWrite": 0,
+          "output": 37
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "group": "B",
+      "repeat": 3,
+      "success": true,
+      "conversationInputTokens": 71225,
+      "conversationOutputTokens": 1065,
+      "uncachedInputTokens": 29753,
+      "cacheReadTokens": 41472,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 4077,
+      "peakInputTokens": 8279,
+      "modelRequests": 11,
+      "turnLatencyMs": [
+        21655,
+        2431,
+        31903,
+        8082
+      ],
+      "activeLatencyMs": 64071,
+      "imageToolLatencyMs": 18838,
+      "initialSdkDefinitions": 2,
+      "toolErrors": 0,
+      "toolErrorCategories": {},
+      "businessCalls": 5,
+      "searchCalls": 4,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1254,
+          "height": 1254,
+          "exactSizeMatch": false,
+          "squareAspect": true,
+          "bytes": 1045907,
+          "sha256": "2c00efb1076ed21df9fb416fbe6e3622dc105a71ba10d5909dbcb76494ee634c"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 4077,
+          "uncachedInput": 4077,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 69
+        },
+        {
+          "turn": 1,
+          "input": 4478,
+          "uncachedInput": 4478,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 141
+        },
+        {
+          "turn": 1,
+          "input": 5528,
+          "uncachedInput": 5528,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 153
+        },
+        {
+          "turn": 1,
+          "input": 6115,
+          "uncachedInput": 6115,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 148
+        },
+        {
+          "turn": 1,
+          "input": 6345,
+          "uncachedInput": 329,
+          "cacheRead": 6016,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 2,
+          "input": 6410,
+          "uncachedInput": 266,
+          "cacheRead": 6144,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 3,
+          "input": 6568,
+          "uncachedInput": 296,
+          "cacheRead": 6272,
+          "cacheWrite": 0,
+          "output": 78
+        },
+        {
+          "turn": 3,
+          "input": 7423,
+          "uncachedInput": 7423,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 177
+        },
+        {
+          "turn": 3,
+          "input": 7922,
+          "uncachedInput": 626,
+          "cacheRead": 7296,
+          "cacheWrite": 0,
+          "output": 85
+        },
+        {
+          "turn": 4,
+          "input": 8080,
+          "uncachedInput": 272,
+          "cacheRead": 7808,
+          "cacheWrite": 0,
+          "output": 160
+        },
+        {
+          "turn": 4,
+          "input": 8279,
+          "uncachedInput": 343,
+          "cacheRead": 7936,
+          "cacheWrite": 0,
+          "output": 18
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "group": "A",
+      "repeat": 3,
+      "success": true,
+      "conversationInputTokens": 154104,
+      "conversationOutputTokens": 879,
+      "uncachedInputTokens": 23544,
+      "cacheReadTokens": 130560,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 21222,
+      "peakInputTokens": 22753,
+      "modelRequests": 7,
+      "turnLatencyMs": [
+        12797,
+        3221,
+        26270,
+        7924
+      ],
+      "activeLatencyMs": 50212,
+      "imageToolLatencyMs": 15954,
+      "initialSdkDefinitions": 35,
+      "toolErrors": 0,
+      "toolErrorCategories": {},
+      "businessCalls": 5,
+      "searchCalls": 0,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1254,
+          "height": 1254,
+          "exactSizeMatch": false,
+          "squareAspect": true,
+          "bytes": 1060766,
+          "sha256": "e973ce793d17b624693bc42f0a0ccf49a2c2d0f89cd2a6aa8c1c171f47ccb46e"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 21222,
+          "uncachedInput": 21222,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 370
+        },
+        {
+          "turn": 1,
+          "input": 21639,
+          "uncachedInput": 519,
+          "cacheRead": 21120,
+          "cacheWrite": 0,
+          "output": 18
+        },
+        {
+          "turn": 2,
+          "input": 21704,
+          "uncachedInput": 200,
+          "cacheRead": 21504,
+          "cacheWrite": 0,
+          "output": 31
+        },
+        {
+          "turn": 3,
+          "input": 21875,
+          "uncachedInput": 371,
+          "cacheRead": 21504,
+          "cacheWrite": 0,
+          "output": 178
+        },
+        {
+          "turn": 3,
+          "input": 22376,
+          "uncachedInput": 616,
+          "cacheRead": 21760,
+          "cacheWrite": 0,
+          "output": 86
+        },
+        {
+          "turn": 4,
+          "input": 22535,
+          "uncachedInput": 263,
+          "cacheRead": 22272,
+          "cacheWrite": 0,
+          "output": 178
+        },
+        {
+          "turn": 4,
+          "input": 22753,
+          "uncachedInput": 353,
+          "cacheRead": 22400,
+          "cacheWrite": 0,
+          "output": 18
+        }
+      ]
+    },
+    {
+      "model": "opencode-go-muse-spark-1.3",
+      "group": "A",
+      "repeat": 3,
+      "success": true,
+      "conversationInputTokens": 193128,
+      "conversationOutputTokens": 4608,
+      "uncachedInputTokens": 24145,
+      "cacheReadTokens": 168983,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 21165,
+      "peakInputTokens": 26476,
+      "modelRequests": 8,
+      "turnLatencyMs": [
+        13963,
+        4292,
+        21862,
+        5404
+      ],
+      "activeLatencyMs": 45521,
+      "imageToolLatencyMs": 13522,
+      "initialSdkDefinitions": 35,
+      "toolErrors": 2,
+      "toolErrorCategories": {
+        "invalid_terminal_arguments": 1,
+        "non_json_ptc_completion": 1
+      },
+      "businessCalls": 5,
+      "searchCalls": 0,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1536,
+          "height": 1024,
+          "exactSizeMatch": false,
+          "squareAspect": false,
+          "bytes": 1044654,
+          "sha256": "fd6dae6ea79c1960a5365ea1c00fed11eace7ac72330f82bbb8dccfa60d99770"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 21165,
+          "uncachedInput": 21165,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "output": 1592
+        },
+        {
+          "turn": 1,
+          "input": 22793,
+          "uncachedInput": 408,
+          "cacheRead": 22385,
+          "cacheWrite": 0,
+          "output": 667
+        },
+        {
+          "turn": 1,
+          "input": 23548,
+          "uncachedInput": 139,
+          "cacheRead": 23409,
+          "cacheWrite": 0,
+          "output": 179
+        },
+        {
+          "turn": 2,
+          "input": 23773,
+          "uncachedInput": 364,
+          "cacheRead": 23409,
+          "cacheWrite": 0,
+          "output": 88
+        },
+        {
+          "turn": 3,
+          "input": 23989,
+          "uncachedInput": 580,
+          "cacheRead": 23409,
+          "cacheWrite": 0,
+          "output": 1125
+        },
+        {
+          "turn": 3,
+          "input": 25410,
+          "uncachedInput": 465,
+          "cacheRead": 24945,
+          "cacheWrite": 0,
+          "output": 494
+        },
+        {
+          "turn": 4,
+          "input": 25974,
+          "uncachedInput": 517,
+          "cacheRead": 25457,
+          "cacheWrite": 0,
+          "output": 414
+        },
+        {
+          "turn": 4,
+          "input": 26476,
+          "uncachedInput": 507,
+          "cacheRead": 25969,
+          "cacheWrite": 0,
+          "output": 49
+        }
+      ]
+    },
+    {
+      "model": "opencode-go-muse-spark-1.3",
+      "group": "B",
+      "repeat": 3,
+      "success": true,
+      "conversationInputTokens": 98826,
+      "conversationOutputTokens": 3739,
+      "uncachedInputTokens": 32318,
+      "cacheReadTokens": 66508,
+      "cacheWriteTokens": 0,
+      "firstRequestInputTokens": 4176,
+      "peakInputTokens": 11758,
+      "modelRequests": 12,
+      "turnLatencyMs": [
+        18747,
+        1777,
+        20514,
+        4535
+      ],
+      "activeLatencyMs": 45573,
+      "imageToolLatencyMs": 12928,
+      "initialSdkDefinitions": 2,
+      "toolErrors": 1,
+      "toolErrorCategories": {
+        "invalid_terminal_arguments": 1
+      },
+      "businessCalls": 5,
+      "searchCalls": 4,
+      "images": [
+        {
+          "provider": "openai-compat",
+          "model": "gpt-image-2.5-flare",
+          "requestedSize": "1024x1024",
+          "width": 1536,
+          "height": 1024,
+          "exactSizeMatch": false,
+          "squareAspect": false,
+          "bytes": 1104631,
+          "sha256": "d850971116e8b58fafbbb08dd2d61e91bd2d0a3597421bc30e97cfca3d8fb451"
+        }
+      ],
+      "actualCharge": null,
+      "currency": null,
+      "imageProviderTokens": null,
+      "perRequest": [
+        {
+          "turn": 1,
+          "input": 4176,
+          "uncachedInput": 4063,
+          "cacheRead": 113,
+          "cacheWrite": 0,
+          "output": 585
+        },
+        {
+          "turn": 1,
+          "input": 4798,
+          "uncachedInput": 717,
+          "cacheRead": 4081,
+          "cacheWrite": 0,
+          "output": 238
+        },
+        {
+          "turn": 1,
+          "input": 5420,
+          "uncachedInput": 4411,
+          "cacheRead": 1009,
+          "cacheWrite": 0,
+          "output": 445
+        },
+        {
+          "turn": 1,
+          "input": 6760,
+          "uncachedInput": 5367,
+          "cacheRead": 1393,
+          "cacheWrite": 0,
+          "output": 168
+        },
+        {
+          "turn": 1,
+          "input": 7297,
+          "uncachedInput": 6160,
+          "cacheRead": 1137,
+          "cacheWrite": 0,
+          "output": 812
+        },
+        {
+          "turn": 1,
+          "input": 8588,
+          "uncachedInput": 1307,
+          "cacheRead": 7281,
+          "cacheWrite": 0,
+          "output": 138
+        },
+        {
+          "turn": 2,
+          "input": 8773,
+          "uncachedInput": 212,
+          "cacheRead": 8561,
+          "cacheWrite": 0,
+          "output": 97
+        },
+        {
+          "turn": 3,
+          "input": 8999,
+          "uncachedInput": 310,
+          "cacheRead": 8689,
+          "cacheWrite": 0,
+          "output": 211
+        },
+        {
+          "turn": 3,
+          "input": 10068,
+          "uncachedInput": 7907,
+          "cacheRead": 2161,
+          "cacheWrite": 0,
+          "output": 395
+        },
+        {
+          "turn": 3,
+          "input": 10913,
+          "uncachedInput": 944,
+          "cacheRead": 9969,
+          "cacheWrite": 0,
+          "output": 293
+        },
+        {
+          "turn": 4,
+          "input": 11276,
+          "uncachedInput": 411,
+          "cacheRead": 10865,
+          "cacheWrite": 0,
+          "output": 314
+        },
+        {
+          "turn": 4,
+          "input": 11758,
+          "uncachedInput": 509,
+          "cacheRead": 11249,
+          "cacheWrite": 0,
+          "output": 43
+        }
+      ]
+    }
+  ],
+  "runtimeSourceSha256": {
+    "index.js": "66a899552f1799f1ce8a04b1c4f1ace0b848202adb675aec13a0e4d48d957be4",
+    "search.js": "db5e473c652e51d40e7fff32aafd2dde620d067a7cdd91afcc2cfda80a561f65"
+  },
+  "discoveryConfig": {
+    "enabled": true,
+    "maxResults": 3,
+    "maxQueryChars": 256,
+    "maxDescriptionChars": 160
+  },
+  "prompts": [
+    "真实 A/B 基准任务（公开合成数据）。只操作工作区内 ptc-ab-20261018 与生图输出目录。第一轮必须依次调用三个不同的业务工具：read 读取 ptc-ab-20261018/fixture.json；bash 执行只读命令 printf 137；write 将 JSON {\"sum\":201,\"terminal\":137,\"result\":420,\"passphrase\":\"ORCHID-137\"} 写入 ptc-ab-20261018/result.json。必须在 run_code 中解析真实 read 和 bash 返回，计算 numbers 总和及终端数乘 3 加 9 后再写入，不能跳过工具。记住口令及结果。本轮不生图，不调用其他业务工具。如果需要发现工具，先用精确名称、limit:1 搜索并 return 结果，结束该 run_code，在下一次请求再调用。每个 run_code 均填写非空 justification。最后仅回复 STEP1 / ORCHID-137 / 实际总和 / 实际计算结果。",
+    "第二轮不调用任何工具。复述上一轮口令、三个数字总和，并把计算结果加 1。仅回复 STEP2 / 口令 / 总和 / 新结果。",
+    "第三轮请调用 generate_image 真实生成一张图：白色背景，居中一只简洁的青绿色纸鹤，平面矢量插画风格，无文字，无阴影。尺寸 1024x1024，保存到工作区；只生成一张，不编辑、不搜索灵感，不读取图像。需要发现时用精确名称 generate_image、limit:1 搜索并 return，结束该 run_code，下次请求调用。每个 run_code 填非空 justification。完成后仅回复 STEP3 / ORCHID-137 / 已生成 / 实际保存路径，并显示附件。",
+    "第四轮先用 read 读取 ptc-ab-20261018/result.json，核对保存的口令和计算结果；在代码中把 result 加 2，再回复。不要再生图，也不要调用其他业务工具。仅回复 STEP4 / 文件中的口令 / 文件中的总和 / 新结果。"
+  ],
+  "fixture": {
+    "numbers": [
+      137,
+      23,
+      41
+    ],
+    "passphrase": "ORCHID-137"
+  },
+  "groupDefinitions": {
+    "A": "full PTC SDK, discovery disabled",
+    "B": "same profile with progressive tool discovery enabled"
+  },
+  "aggregates": [
+    {
+      "model": "gpt-6.1-sol",
+      "groups": {
+        "A": {
+          "n": 3,
+          "successes": 3,
+          "metrics": {
+            "conversationInputTokens": {
+              "mean": 153825,
+              "median": 153703,
+              "min": 153668,
+              "max": 154104,
+              "sampleStdDev": 242.2539989350021
+            },
+            "conversationOutputTokens": {
+              "mean": 814.3333333333334,
+              "median": 782,
+              "min": 782,
+              "max": 879,
+              "sampleStdDev": 56.0029761113937
+            },
+            "modelRequests": {
+              "mean": 7,
+              "median": 7,
+              "min": 7,
+              "max": 7,
+              "sampleStdDev": 0.0
+            },
+            "activeLatencyMs": {
+              "mean": 48005,
+              "median": 49458,
+              "min": 44345,
+              "max": 50212,
+              "sampleStdDev": 3191.9945175391513
+            },
+            "imageToolLatencyMs": {
+              "mean": 15487.333333333334,
+              "median": 15512,
+              "min": 14996,
+              "max": 15954,
+              "sampleStdDev": 479.47610298463604
+            },
+            "firstRequestInputTokens": {
+              "mean": 21222,
+              "median": 21222,
+              "min": 21222,
+              "max": 21222,
+              "sampleStdDev": 0.0
+            },
+            "peakInputTokens": {
+              "mean": 22695,
+              "median": 22675,
+              "min": 22657,
+              "max": 22753,
+              "sampleStdDev": 51.02940328869229
+            }
+          }
+        },
+        "B": {
+          "n": 3,
+          "successes": 3,
+          "metrics": {
+            "conversationInputTokens": {
+              "mean": 74669.66666666667,
+              "median": 71225,
+              "min": 69958,
+              "max": 82826,
+              "sampleStdDev": 7091.942775666857
+            },
+            "conversationOutputTokens": {
+              "mean": 1161,
+              "median": 1140,
+              "min": 1065,
+              "max": 1278,
+              "sampleStdDev": 108.04165863221463
+            },
+            "modelRequests": {
+              "mean": 11.666666666666666,
+              "median": 11,
+              "min": 11,
+              "max": 13,
+              "sampleStdDev": 1.1547005383792515
+            },
+            "activeLatencyMs": {
+              "mean": 64439.666666666664,
+              "median": 64071,
+              "min": 62399,
+              "max": 66849,
+              "sampleStdDev": 2247.790322368466
+            },
+            "imageToolLatencyMs": {
+              "mean": 16223,
+              "median": 15284,
+              "min": 14547,
+              "max": 18838,
+              "sampleStdDev": 2294.4413263363263
+            },
+            "firstRequestInputTokens": {
+              "mean": 4077,
+              "median": 4077,
+              "min": 4077,
+              "max": 4077,
+              "sampleStdDev": 0.0
+            },
+            "peakInputTokens": {
+              "mean": 8289,
+              "median": 8279,
+              "min": 8185,
+              "max": 8403,
+              "sampleStdDev": 109.34349546269316
+            }
+          }
+        }
+      },
+      "changePercent": {
+        "conversationInputTokens": -51.458042147461946,
+        "conversationOutputTokens": 42.57060990585346,
+        "modelRequests": 66.66666666666666,
+        "activeLatencyMs": 34.235322709439984,
+        "imageToolLatencyMs": 4.750118376307522,
+        "firstRequestInputTokens": -80.78880407124683,
+        "peakInputTokens": -63.47653668208857
+      }
+    },
+    {
+      "model": "opencode-go-muse-spark-1.3",
+      "groups": {
+        "A": {
+          "n": 3,
+          "successes": 3,
+          "metrics": {
+            "conversationInputTokens": {
+              "mean": 193155.33333333334,
+              "median": 193128,
+              "min": 188566,
+              "max": 197772,
+              "sampleStdDev": 4603.060865699403
+            },
+            "conversationOutputTokens": {
+              "mean": 4173.333333333333,
+              "median": 4608,
+              "min": 3164,
+              "max": 4748,
+              "sampleStdDev": 876.9066845071563
+            },
+            "modelRequests": {
+              "mean": 8,
+              "median": 8,
+              "min": 8,
+              "max": 8,
+              "sampleStdDev": 0.0
+            },
+            "activeLatencyMs": {
+              "mean": 45926.333333333336,
+              "median": 45521,
+              "min": 45216,
+              "max": 47042,
+              "sampleStdDev": 978.1565995960633
+            },
+            "imageToolLatencyMs": {
+              "mean": 13216.333333333334,
+              "median": 13380,
+              "min": 12747,
+              "max": 13522,
+              "sampleStdDev": 412.6091774710462
+            },
+            "firstRequestInputTokens": {
+              "mean": 21165,
+              "median": 21165,
+              "min": 21165,
+              "max": 21165,
+              "sampleStdDev": 0.0
+            },
+            "peakInputTokens": {
+              "mean": 26334.333333333332,
+              "median": 26476,
+              "min": 25408,
+              "max": 27119,
+              "sampleStdDev": 864.2524708285961
+            }
+          }
+        },
+        "B": {
+          "n": 3,
+          "successes": 3,
+          "metrics": {
+            "conversationInputTokens": {
+              "mean": 96569,
+              "median": 98826,
+              "min": 90087,
+              "max": 100794,
+              "sampleStdDev": 5699.166518009453
+            },
+            "conversationOutputTokens": {
+              "mean": 3728,
+              "median": 3739,
+              "min": 3268,
+              "max": 4177,
+              "sampleStdDev": 454.5998240210834
+            },
+            "modelRequests": {
+              "mean": 12,
+              "median": 12,
+              "min": 12,
+              "max": 12,
+              "sampleStdDev": 0.0
+            },
+            "activeLatencyMs": {
+              "mean": 43104,
+              "median": 43834,
+              "min": 39905,
+              "max": 45573,
+              "sampleStdDev": 2903.6582099138323
+            },
+            "imageToolLatencyMs": {
+              "mean": 13028.666666666666,
+              "median": 13012,
+              "min": 12928,
+              "max": 13146,
+              "sampleStdDev": 109.9515044614367
+            },
+            "firstRequestInputTokens": {
+              "mean": 4175.666666666667,
+              "median": 4176,
+              "min": 4175,
+              "max": 4176,
+              "sampleStdDev": 0.5773502691896257
+            },
+            "peakInputTokens": {
+              "mean": 11547.666666666666,
+              "median": 11758,
+              "min": 10709,
+              "max": 12176,
+              "sampleStdDev": 755.779288769766
+            }
+          }
+        }
+      },
+      "changePercent": {
+        "conversationInputTokens": -50.00448688965358,
+        "conversationOutputTokens": -10.670926517571877,
+        "modelRequests": 50.0,
+        "activeLatencyMs": -6.1453487106162825,
+        "imageToolLatencyMs": -1.419960150319055,
+        "firstRequestInputTokens": -80.27088747145444,
+        "peakInputTokens": -56.14976646456464
+      }
+    }
+  ],
+  "order": "repeat 1 GPT B/A, Muse A/B; repeat 2 GPT A/B, Muse B/A; repeat 3 GPT B/A, Muse A/B"
+}

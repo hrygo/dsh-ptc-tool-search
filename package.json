@@ -1,6 +1,6 @@
 {
   "name": "@hrygo/dsh-ptc-tool-search",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "./index.js",
   "description": "Per-agent progressive tool discovery for DeepSeek Harness PTC",
@@ -11,7 +11,7 @@
   "bugs": { "url": "https://github.com/hrygo/dsh-ptc-tool-search/issues" },
   "keywords": ["dsh-plugin", "deepseek-harness", "ptc", "tool-search"],
   "exports": { ".": "./index.js", "./locale/*.json": "./locale/*.json", "./icon": "./icon.svg" },
-  "files": ["index.js", "search.js", "cordis.patch.yml", "locale", "icon.svg", "README.md", "README.zh.md", "LICENSE", "CHANGELOG.md", "docs/validation.md"],
+  "files": ["index.js", "search.js", "cordis.patch.yml", "locale", "icon.svg", "README.md", "README.zh.md", "LICENSE", "CHANGELOG.md", "docs/validation.md", "docs/benchmark-2026-10-18.md", "docs/benchmark-2026-10-18.json"],
   "scripts": { "test": "node --test tests/*.test.js", "check": "node --check index.js && node --check search.js" },
   "engines": { "node": ">=24", "dsh": "0.2.1-rc.2" },
   "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.1 — 2026-10-18
+
+### Changed
+
+- Replace the plugin icon with a transparent 36×36 code-search glyph, reviewed in both themes.
+- Expand live GPT/Muse A/B coverage to repeated four-turn workflows with multiple tools and image generation; publish token, latency and charge-availability measurements.
+
+Discovery runtime code and Harness compatibility are unchanged.
+
 ## 0.1.0 — 2026-10-18
 
 ### Added

@@ -1,33 +1,41 @@
+<img src="icon.svg" width="72" height="72" alt="PTC Tool Search" />
+
 # PTC 工具搜索
 
 [English](README.md) | 中文
 
-按需加载 PTC 工具定义。在两个模型的真实 A/B 测试中，本插件使**首个请求输入减少约 81%**，**两轮累计输入减少 52–64%**，已计入搜索与重试开销。
+按需加载 PTC 工具定义，保留对话历史。12 个真实四轮会话中，启用插件后累计对话输入平均减少 **51.46%（GPT）**、**50.00%（Muse）**。输出 token 和延迟也一并列出。
 
-独立社区 Host 插件，通过 DeepSeek Harness 官方作用域工具注册表加载工具。0.1.0 版支持 **Harness 0.2.1-rc.2**、Node.js 24+。
+独立社区 Host 插件，使用 DeepSeek Harness 官方作用域工具注册表。0.1.1 版支持 **Harness 0.2.1-rc.2**、Node.js 24+。
 
-## 实测成效
+## 重复实测成效
 
-2026-10-18，在 macOS ARM64 上通过 CLIProxyAPI Responses 测试 GPT 6.1 Sol 和 Muse Spark 1.3。A 组使用完整 PTC SDK，B 组启用本插件；两组提示词一致：执行 `printf 137`、读取实际输出并计算，第二轮不调用工具，复述口令并继续计算。四个会话均返回正确结果。
+2026-10-18，macOS ARM64、Desktop 0.2.1-rc.2、CLIProxyAPI Responses。每模型每组重复 **3 次**，共 **12 个新会话、48 轮对话、12 次真实生图**。相同四轮任务覆盖读取 JSON、终端执行、写入结果、无工具记忆、生图和文件回读。A 使用完整 PTC SDK，B 启用本插件；下表为每个四轮会话的均值。
 
-| 模型 | 首个请求输入 A → B | 减少 | 两轮累计输入 A → B | 减少 |
-| --- | ---: | ---: | ---: | ---: |
-| GPT 6.1 Sol | 21,102 → 3,957 | **81.25%** | 63,669 → 23,143 | **63.65%** |
-| Muse Spark 1.3 | 21,046 → 4,057 | **80.72%** | 64,487 → 30,689 | **52.41%** |
+| 模型 | 输入 token A → B | 输入减少 | 输出 token A → B | 活跃耗时 A → B（秒） | 流程完成 A / B |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| GPT 6.1 Sol | 153,825.0 → 74,669.7 | **51.46%** | 814.3 → 1,161.0 | 48.01 → 64.44 | 3/3 · 3/3 |
+| Muse Spark 1.3 | 193,155.3 → 96,569.0 | **50.00%** | 4,173.3 → 3,728.0 | 45.93 → 43.10 | 3/3 · 3/3 |
 
-统计采用 provider 上报的输入 token，包含缓存读取与写入。初始生成的 SDK 从 **35 个工具定义减至 2 个**（`tool_search` 与 agent 自有的 `subagent`），所选定义在后续请求加载。插件延迟加载工具定义，保留对话历史；两组 API 层仍只暴露 `run_code`，不依赖 provider 原生搜索协议。
+未缓存输入也需单独看：GPT 6.1 Sol: 23,521.0 → 31,405.7 (+33.52%); Muse Spark 1.3: 25,761.0 → 31,464.0 (+22.14%)。因此这轮数据不能证明费用下降。
 
-**代价与适用范围：**两种模型完成首轮任务的请求数均从 2 次增至 4 次，上表已计入搜索与重试；加载更多工具后 SDK 输入会增长。每个模型仅一组 A/B 样本，数据反映本任务的成效，不代表平均节省比例、账单降幅或延迟保证。详见 [测量方法与限制](docs/validation.md)。
+输入包含缓存读取与写入，已计入搜索和重试；输出统计为对话模型 token，生图服务未提供自身 token。活跃耗时包含工具和生图，排除两次用户发送之间的间隔。**实际费用：未提供**，未将其当作零费用，也不宣称账单降幅。
+
+初始 SDK 从 **35 个定义减至 2 个**；首请求输入平均减少 **80.27–80.79%**。两组 API 层均只暴露 `run_code`。按需发现需要额外往返，平均模型请求数为 GPT 6.1 Sol: 7.0 → 11.7; Muse Spark 1.3: 8.0 → 12.0。输出和延迟并不保证减少，所选工具累积后 SDK 也会增长。GPT 无工具错误；Muse A/B 分别出现 4/3 次可恢复错误，均自行重试完成，开销已计入。
+
+**生图尺寸：**各次均请求 `1024x1024`，实际返回 GPT 6.1 Sol: 1254×1254 (n=6); Muse Spark 1.3: 1536×1024 (n=6)，严格符合请求尺寸 **0/12**；工作流成功表示工具、计算、记忆和图片产物通过核验，不代表尺寸符合请求。A/B 对照按同一模型分别比较，不据此跨模型比较生图速度。
+
+这是一个固定工作流的小样本重复测试。完整逐次结果、均值/中位数/范围、方法和限制见 [实测报告](docs/benchmark-2026-10-18.md) 与 [可核对数据](docs/benchmark-2026-10-18.json)。
 
 ## 安装
 
-在 Harness“插件 → 添加插件”输入 `github:hrygo/dsh-ptc-tool-search#v0.1.0`，或使用官方 CLI：
+在 Harness“插件 → 添加插件”输入 `github:hrygo/dsh-ptc-tool-search#v0.1.1`，或使用官方 CLI：
 
 ```sh
-dsh plugin --profile desktop add github:hrygo/dsh-ptc-tool-search#v0.1.0
+dsh plugin --profile desktop add github:hrygo/dsh-ptc-tool-search#v0.1.1
 ```
 
-建议将版本标签替换为 [Release](https://github.com/hrygo/dsh-ptc-tool-search/releases/tag/v0.1.0) 中的完整提交 SHA，以固定源码。Release 同时提供压缩包与 SHA-256；下载并核验后可运行 `dsh plugin --profile desktop add ./hrygo-dsh-ptc-tool-search-0.1.0.tgz`。
+建议将版本标签替换为 [Release](https://github.com/hrygo/dsh-ptc-tool-search/releases/tag/v0.1.1) 中的完整提交 SHA，以固定源码。Release 同时提供压缩包与 SHA-256；下载并核验后可运行 `dsh plugin --profile desktop add ./hrygo-dsh-ptc-tool-search-0.1.1.tgz`。
 
 包内直接包含 ESM JavaScript，无需编译、安装依赖或批准构建脚本。替换旧版本后重启 Desktop，再新建 PTC 会话。此前通过本地目录安装过该插件时，先在插件管理器卸载旧包；只能启用一个注册 `tool_search` 的插件。
 

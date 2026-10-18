@@ -1,33 +1,41 @@
+<img src="icon.svg" width="72" height="72" alt="PTC Tool Search" />
+
 # PTC Tool Search
 
 English | [中文](README.zh.md)
 
-Load PTC tool definitions only when needed. In a real two-model A/B test, this plugin reduced **first-request input by about 81%** and **cumulative input across two turns by 52–64%**, including search and retry overhead.
+Load PTC tool definitions on demand while preserving conversation history. Across 12 live four-turn sessions, the plugin reduced mean cumulative conversation input by **51.46% (GPT)** and **50.00% (Muse)**. Output tokens and latency are reported alongside the reductions.
 
-An independent community Host bundle for DeepSeek Harness, using its official scoped tool registry. Version 0.1.0 supports **Harness 0.2.1-rc.2** and Node.js 24+.
+An independent community Host bundle using the official DeepSeek Harness scoped tool registry. Version 0.1.1 supports **Harness 0.2.1-rc.2** and Node.js 24+.
 
-## Measured results
+## Repeated live results
 
-Tested on 2026-10-18 with GPT 6.1 Sol and Muse Spark 1.3 through CLIProxyAPI Responses on macOS ARM64. A used the full PTC SDK; B enabled this plugin. Both groups received identical prompts: execute `printf 137`, calculate from the actual output, then recall the result in a second turn without tools. All four sessions answered correctly.
+Measured on 2026-10-18: macOS ARM64, Desktop 0.2.1-rc.2, CLIProxyAPI Responses. **3 runs per model per group: 12 new sessions, 48 turns and 12 real image generations.** Identical four-turn prompts cover JSON reading, terminal execution, result writing, tool-free recall, image generation and file readback. A uses the full PTC SDK; B enables this plugin. Values below are means per complete four-turn session.
 
-| Model | First request input A → B | Reduction | Two-turn cumulative input A → B | Reduction |
-| --- | ---: | ---: | ---: | ---: |
-| GPT 6.1 Sol | 21,102 → 3,957 | **81.25%** | 63,669 → 23,143 | **63.65%** |
-| Muse Spark 1.3 | 21,046 → 4,057 | **80.72%** | 64,487 → 30,689 | **52.41%** |
+| Model | Input tokens A → B | Input reduction | Output tokens A → B | Active seconds A → B | Workflow completion A / B |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| GPT 6.1 Sol | 153,825.0 → 74,669.7 | **51.46%** | 814.3 → 1,161.0 | 48.01 → 64.44 | 3/3 · 3/3 |
+| Muse Spark 1.3 | 193,155.3 → 96,569.0 | **50.00%** | 4,173.3 → 3,728.0 | 45.93 → 43.10 | 3/3 · 3/3 |
 
-Counts are provider-reported input tokens, including cache reads and writes. The initial generated SDK exposed **2 tool definitions instead of 35** (`tool_search` and agent-owned `subagent`); selected definitions appeared on subsequent requests. The plugin defers tool definitions while preserving conversation history. Both groups still exposed only `run_code` as the API-level tool; this is not a provider-native search protocol.
+Uncached input increased: GPT 6.1 Sol: 23,521.0 → 31,405.7 (+33.52%); Muse Spark 1.3: 25,761.0 → 31,464.0 (+22.14%). These results do not establish billing savings.
 
-**Tradeoff:** the first task took 4 model requests with discovery versus 2 with the full SDK. Search and retries remain included above; SDK input grows as more tools are selected. Each model has one A/B pair, so these results describe this task, not average savings or a billing or latency guarantee. See [measurement details and limitations](docs/validation.md).
+Input includes cache reads/writes, searches and retries. Output counts conversation-model tokens; the image service does not expose its own token usage. Active time includes tools and image generation, excluding gaps between user prompts. **Actual charges: not reported**, never treated as zero; no billing reduction is claimed.
+
+The initial SDK shrank from **35 definitions to 2**; mean first-request input fell **80.27–80.79%**. Both groups expose only `run_code` at the API level. Discovery adds round trips: mean model requests were GPT 6.1 Sol: 7.0 → 11.7; Muse Spark 1.3: 8.0 → 12.0. Output and latency need not decrease, and the SDK grows as tools accumulate. GPT had no tool errors; Muse A/B had 4/3 recoverable errors respectively, all retried to completion and included.
+
+**Image dimensions:** every call requested `1024x1024`, returned GPT 6.1 Sol: 1254×1254 (n=6); Muse Spark 1.3: 1536×1024 (n=6); exact size matches: **0/12**. Workflow success covers tool execution, arithmetic, recall and image artifacts, not requested-size compliance. Compare A/B within each model, not image speed across models.
+
+This is a small repeated sample of one fixed workflow. See the [per-run report, method and limitations](docs/benchmark-2026-10-18.md) and [auditable data](docs/benchmark-2026-10-18.json) for means, medians and ranges.
 
 ## Install
 
-Use Harness **Plugins → Add plugin**, then enter `github:hrygo/dsh-ptc-tool-search#v0.1.0`, or use the official CLI:
+Use Harness **Plugins → Add plugin**, then enter `github:hrygo/dsh-ptc-tool-search#v0.1.1`, or use the official CLI:
 
 ```sh
-dsh plugin --profile desktop add github:hrygo/dsh-ptc-tool-search#v0.1.0
+dsh plugin --profile desktop add github:hrygo/dsh-ptc-tool-search#v0.1.1
 ```
 
-For an immutable installation, replace `v0.1.0` with the full commit SHA in the [release notes](https://github.com/hrygo/dsh-ptc-tool-search/releases/tag/v0.1.0). The release also provides a tarball and SHA-256 checksum. Download and verify them, then install with `dsh plugin --profile desktop add ./hrygo-dsh-ptc-tool-search-0.1.0.tgz`.
+For an immutable installation, replace `v0.1.1` with the full commit SHA in the [release notes](https://github.com/hrygo/dsh-ptc-tool-search/releases/tag/v0.1.1). The release also provides a tarball and SHA-256 checksum. Download and verify them, then install with `dsh plugin --profile desktop add ./hrygo-dsh-ptc-tool-search-0.1.1.tgz`.
 
 This package ships executable ESM JavaScript: no compilation, dependencies, `prepare` script or build-script permission is needed. Restart Desktop after replacing an installed version, then create a PTC session. Remove a previous local development installation first; only one `tool_search` plugin may be enabled.
 
